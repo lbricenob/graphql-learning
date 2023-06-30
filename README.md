@@ -5,7 +5,7 @@ Repo for keeping graphql annotations and examples
 It's a query language for APIs. 
 
 Example of a query:
-```json
+```graphql
 {
   allPokemon(generation:1,first:3) {
     pokemon {
@@ -64,7 +64,7 @@ Base Types:
 Enumeration Types:
 - Scalar types that accept just a set of values
   
-  ```json
+  ```graphql
   enum pokemonType {
     FIRE
     WATER
@@ -76,7 +76,7 @@ Query and Mutation Types:
 - Mutation: whether we are going to add or delete something in the resource
 
 Non-nullable Type (!):
-```json
+```graphql
 type Pokemon {
   id: ID!,
   name: String!,
@@ -93,7 +93,7 @@ Composed by:
 - Operation Name: name of the query
 - Variables: added to the query to create a function parameter
 
-```json
+```graphql
 query viewerInfo ($isOwned: Boolean!) { // viewerInfo: OperationName, $isOwned: variable
   viewer { 
     login // fields
@@ -130,7 +130,7 @@ fragment userInfo on User { // userInfo: fragment
 ## Mutations
 Modifying the data (create, update, delete)
 
-```json
+```graphql
 mutation newStatus($input: ChangeUserStatusInput!) {
   changeUserStatus(input: $input) {
     clientMutationId
